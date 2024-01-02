@@ -1,0 +1,12 @@
+# Per excellent advice in:
+# https://code.visualstudio.com/docs/remote/troubleshooting#_resolving-git-line-ending-issues-in-wsl-resulting-in-many-modified-files
+
+# Set text line endings to LF. This is important when using
+# DevContainers on Windows, where the host repository (which uses
+# CRLF by default on work tree checkout) is mounted
+# in a Linux development environment (which will use only LF). The
+# Linux Git will see the additional CRLFs as modifications.
+
+* text=auto eol=lf
+*.{cmd,[cC][mM][dD]} text eol=crlf
+*.{bat,[bB][aA][tT]} text eol=crlf
